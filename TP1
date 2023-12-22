@@ -1,1 +1,117 @@
-gddsdssgsdgsdd
+1
+void setup()
+ {
+
+pinMode(10,OUTPUT);// la led est placée en sortie sur la broche 10
+
+}
+
+void loop() {
+
+digitalWrite(10,HIGH);//allumer la led
+delay (1000);//attendre 1 seconde
+digitalWrite(10,LOW);//éteindre la led
+delay(1000);//attendre 1 seconde
+
+}
+
+
+2
+
+void setup() {
+
+pinMode(10,OUTPUT);// la led est placée en sortie sur la broche 10
+
+}
+
+void loop() {
+
+analogWrite(10,63);//allumer la led à 25 pourcents
+delay (2000);//attendre 2 seconde
+analogWrite(10,125);//allumer la led à 50 pourcents
+delay(2000);//attendre 2 seconde
+analogWrite(10,191);//allumer la led à 75 pourcents
+delay(2000);
+
+3
+void setup() {
+
+pinMode(10,OUTPUT);// la led est placée en sortie sur la broche 10
+
+}
+
+void loop() {
+
+analogWrite(10,63);//allumer la led à 25 pourcents
+delay (2000);//attendre 2 seconde
+digitalWrite(10,LOW);//éteindre la led
+delay(1000);
+analogWrite(10,125);//allumer la led à 50 pourcents
+delay(2000);//attendre 2 seconde
+digitalWrite(10,LOW);//éteindre la led
+delay(1000);
+analogWrite(10,191);//allumer la led à 75 pourcents
+delay(2000);
+digitalWrite(10,LOW);
+delay(1000);
+
+
+}
+4-5
+unsigned int PotentiometreValue;// La broche numérique 5 est reliée à la led. On lui donne le nom Led.
+
+int Led = 10;// Déclaration variable IntensiteLed qui va servir à stocker une valeur au format int.
+int IntensiteLed;
+
+
+void setup() {
+ 
+  pinMode(Led, OUTPUT); // Définit Led soit la broche numérique 10 comme sortie.
+}
+
+void loop() {
+  // Lit la valeur de la broche analogique A2 et stock sa valeur dans PotentiometreValue.
+  PotentiometreValue = analogRead(A2);
+  // La valeur du PotentiometreValue Min = 0, Max = 1023 et mappée à Min = 0, Max = 255 puis est stockée dans IntensiteLed.
+  IntensiteLed = map(PotentiometreValue, 0, 1023, 0, 255);
+  // Met la broche numérique 5 (Led) à la valeur de IntensiteLed.
+  analogWrite(Led, IntensiteLed);
+  // attend 10 millisecondes.
+  delay(10);
+}
+
+6-7
+unsigned int PotentiometreValue;
+// La broche numérique 5 est reliée à la led. On lui donne le nom Led.
+int Led = 10;
+// Déclaration variable IntensiteLed qui va servir à stocker une valeur au format int.
+int IntensiteLed;
+#define LDR A0
+unsigned int value;
+
+
+void setup() {
+  // Définit Led soit la broche numérique 10 comme sortie.
+ 
+  pinMode(Led, OUTPUT);
+  pinMode(A0, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+value = analogRead(LDR);
+   Serial.println(value);
+  // Lit la valeur de la broche analogique A2 et stock sa valeur dans PotentiometreValue.
+  PotentiometreValue= analogRead(A2);
+  // La valeur du PotentiometreValue Min = 0, Max = 1023 et mappée à Min = 0, Max = 255 puis est stockée dans IntensiteLed.
+  IntensiteLed = map(PotentiometreValue, 0, 1023, 0, 255);
+  // Met la broche numérique 5 (Ledverte) à la valeur de IntensiteLed.
+  analogWrite(Led, IntensiteLed);
+  // attend 10 millisecondes.
+  delay(10);
+}
+
+
+
+
+
