@@ -1,0 +1,21 @@
+Explication du cablage 
+
+Matériel nécéssaire:
+- carte Arduino
+- 3 résistances de 220ohms
+- 1 led verte
+- 1 led rouge
+- 1 bouton poussoir
+- 1 servomoteur
+- des câbles 
+
+Explication des étapes
+
+La Led a 2 broches: L'anode qui sera branché sur le GND -La cathode qui sera branché sur la borne 3 car elle a une suite finie de valeur
+Nous allons faire ceci avec les deux leds avec différentes broches
+
+Des résistances doivent être placées aux bornes des leds pour protégers celles-ci. L'autre broche de la résistance doit être placée sur le moins
+
+Un bouton poussoir doit être d'une part être alimenté au + de la platine et être protégée à l'aide d'une résistance en suivant le même système que précédément
+
+Le servomoteur lui doit être alimenté sur la platine mais aussi être branché sur une broche de la carte Arduino 
