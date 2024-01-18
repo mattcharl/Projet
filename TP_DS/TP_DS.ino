@@ -19,7 +19,7 @@ void setup() {
   pinMode(verte, OUTPUT);
   pinMode(trigPin, OUTPUT); // Configuration du port du Trigger comme une SORTIE
   pinMode(echoPin, INPUT); // Configuration du port de l'Echo comme une ENTREE
-  Serial.begin(9600);
+  Serial.begin(9600);//ouverture du moniteur série
 
 }
 
